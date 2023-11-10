@@ -32,8 +32,8 @@ export default async function HomeCard(){
         <section className="py-8 px-10">
           <h2 className="font-sans text-slate-600 text-lg font-bold tracking-wide">{title}</h2>
           <p className="text-slate-500 text-[13px] tracking-wide mt-3">{text}</p>
-          <div className="flex justify-between">
-            <div className="flex gap-4 mt-5">
+          <div className="flex items-center justify-between mt-5">
+            <div className="flex gap-4">
               <Image
               className="object-cover rounded-full w-10"
                 property
@@ -46,14 +46,12 @@ export default async function HomeCard(){
               </div>
             </div>
             <Tooltip text='share' trigger='button' icons={['facebook', 'instagram', 'pinterest']}>
-              <div className="rounded-full w-8 h-8">
-                <Image
-                className="w-full"
-                  src={icon}
-                  alt=""
-                  role="presentation"
-                />
-              </div>
+              <Image
+              className="w-full"
+                src={icon}
+                alt=""
+                role="presentation"
+              />
             </Tooltip>
           </div>
         </section>

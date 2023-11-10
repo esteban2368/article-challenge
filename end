@@ -1,0 +1,17 @@
+[33mcommit b14fec6358408614423bb76a7c5d403aaca3b7b7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: esteban2368 <esteban.d2168@gmail.com>
+Date:   Tue Oct 31 23:52:03 2023 -0500
+
+    create component Tooltip, basic configuration
+
+[33mcommit 34313a2e92a712e3fa8dfb93f2c2e501f8de5699[m
+Author: esteban2368 <esteban.d2168@gmail.com>
+Date:   Mon Oct 30 23:16:51 2023 -0500
+
+    -add styles component index page - add styles globals and tailwind - add font proyect - add assets iamges
+
+[33mcommit 428c578f20e4d33ec97cda5d1b2c69d08f9e6276[m
+Author: esteban2368 <esteban.d2168@gmail.com>
+Date:   Sun Oct 22 23:52:24 2023 -0500
+
+    init configuration proyect (using NextJS)
