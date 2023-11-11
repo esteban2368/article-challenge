@@ -6,7 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 236, 242, 248;
   --background-end-rgb: 255, 255, 255;
-  --bg-dark: hsl(217, 19%, 35%)
+  --bg-dark: hsl(217, 19%, 35%);
+  --grayish-blue: hsl(212, 23%, 69%)
+
 }
 body{
   background-color: rgb(var(--background-start-rgb));

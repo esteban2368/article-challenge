@@ -1,3 +1,7 @@
-.container{
+.tooltip__container{
     background-color: var(--bg-dark);
+    color: var(--grayish-blue);
+    letter-spacing: 5px;
+    font-weight: 500;
+    font-size: .81rem;
 }
