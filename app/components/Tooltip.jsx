@@ -43,7 +43,7 @@ const Tooltip = ( { text, icons, trigger, children } ) =>{
                 </>
                 ) : (
                 <>
-                    <button className="rounded-full w-8 h-8 p-2 bg-slate-100 hover:bg-slate-500">{children}</button>
+                    <button className="rounded-full w-8 h-8 p-2 bg-slate-100 text-[var(--dark-blue)] hover:bg-slate-500 hover:text-white">{children}</button>
                     <div className={StyleTooltip.tooltip__container}>{text}</div>
                 </>
             )}

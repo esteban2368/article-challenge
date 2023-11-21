@@ -2,3 +2,6 @@
     width: 285px;
     height: 280px;
 }
+.icon__share{
+    color: var(--dark-blue);
+}

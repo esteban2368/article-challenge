@@ -2,7 +2,9 @@ import StylesHome from "./HomeCard.module.css";
 
 import imageDrawers from "../public/images/drawers.jpg"
 import avatar from "../public/images/avatar-michelle.jpg"
-import icon from "../public/images/icon-share.svg"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faShare } from "@fortawesome/free-solid-svg-icons"
 
 import Image from "next/image";
 import Tooltip from "./components/Tooltip";
@@ -46,12 +48,7 @@ export default async function HomeCard(){
               </div>
             </div>
             <Tooltip text='share' trigger='button' icons={['facebook', 'instagram', 'pinterest']}>
-              <Image
-              className="w-full"
-                src={icon}
-                alt=""
-                role="presentation"
-              />
+              <FontAwesomeIcon icon={faShare}/>
             </Tooltip>
           </div>
         </section>
