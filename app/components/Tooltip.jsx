@@ -1,6 +1,7 @@
 'use client'
 import StyleTooltip from './Tooltip.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareFacebook, faSquarePinterest, faSquareTwitter } from '@fortawesome/free-brands-svg-icons'
 
 import { useState, useCallback, useEffect } from "react"
 
@@ -35,9 +36,11 @@ const Tooltip = ( { text, icons, trigger, children } ) =>{
             {breakPoint ? (
                 <>
                     <button className="rounded-full w-8 h-8 p-2 bg-slate-100 hover:bg-slate-500">{children}</button>
-                    <div className={StyleTooltip.tooltip__container}>
+                    <div className={`${StyleTooltip.tooltip__container} ${StyleTooltip.tooltip__containerMobile}`}>
                         {text}
-                        <FontAwesomeIcon icon={faSquareInstagram} />
+                        <FontAwesomeIcon icon={faSquareFacebook} className='text-white'/>
+                        <FontAwesomeIcon icon={faSquareTwitter} className='text-white'/>
+                        <FontAwesomeIcon icon={faSquarePinterest} className='text-white'/>
                         
                     </div>
                 </>
