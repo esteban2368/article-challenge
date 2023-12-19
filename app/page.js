@@ -20,7 +20,7 @@ export default async function HomeCard(){
   const articles = await getData()
   const {title, text, author, date}  = articles
   return (
-    <section className="w-full mx-auto px-3 max-w-[327px] sm:max-w-[730px]">
+    <section className="w-full mx-auto mx-3 max-w-[327px] sm:max-w-[730px]">
       <article className="relative grid grid-cols-1 sm:grid-cols-[285px_minmax(200px,_1fr)] bg-white rounded-xl overflow-hidden shadow-[0_40px_40px_-10px_rgba(201,213,225,0.5034)]">
         <figure className={`${StylesHome.image} relative`}>
           <Image

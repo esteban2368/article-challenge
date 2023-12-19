@@ -1,7 +1,7 @@
 'use client'
 import StyleTooltip from './Tooltip.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquareFacebook, faSquarePinterest, faSquareTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faSquareFacebook, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 import { useState, useCallback, useEffect } from "react"
 
@@ -30,18 +30,25 @@ const useBreakPoint = (width) => {
 
 const Tooltip = ( { text, icons, trigger, children } ) =>{
     const [isVisible, setIsVisible] = useState(false)
-    const breakPoint = useBreakPoint(768)
+    const breakPoint = useBreakPoint(640)
     return (
         <div>
             {breakPoint ? (
                 <>
-                    <button className="rounded-full w-8 h-8 p-2 bg-slate-100 hover:bg-slate-500">{children}</button>
-                    <div className={`${StyleTooltip.tooltip__container} ${StyleTooltip.tooltip__containerMobile}`}>
-                        {text}
-                        <FontAwesomeIcon icon={faSquareFacebook} className='text-white'/>
-                        <FontAwesomeIcon icon={faSquareTwitter} className='text-white'/>
-                        <FontAwesomeIcon icon={faSquarePinterest} className='text-white'/>
-                        
+                    <button className="rounded-full w-8 h-8 p-2 bg-slate-100 hover:bg-slate-500 relative z-40">{children}</button>
+                    <div className={`${StyleTooltip.tooltip__container} ${StyleTooltip.tooltip__containerMobile} flex gap-5 items-center z-10 py-5 px-8`}>
+                        <span className='uppercase'>{text}</span>
+                        <div className='flex gap-5'>
+                            <a href='https://www.facebook.com/' target='_blank'>
+                                <FontAwesomeIcon icon={faSquareFacebook} className='text-white' size='xl'/>
+                            </a>
+                            <a href='https://twitter.com/?lang=es' target='_blank'>
+                                <FontAwesomeIcon icon={faTwitter} className='text-white' size='xl'/>
+                            </a>
+                            <a href='https://co.pinterest.com/' target='_blank'>
+                                <FontAwesomeIcon icon={faPinterest} className='text-white' size='xl'/>
+                            </a>
+                        </div>
                     </div>
                 </>
                 ) : (
