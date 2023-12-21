@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server --watch ./public/data/data.json --port 8000"
+    "endpoint": "json-server --watch ./public/data/data.json --port 8000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
