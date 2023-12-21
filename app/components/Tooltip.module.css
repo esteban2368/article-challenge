@@ -15,6 +15,16 @@
 .tooltip__containerDesktop{
     width: auto;
     left: 0;
-    bottom: 0;
+    top: 0;
     height: 64px;
+}
+.tooltip__containerDesktop::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+    border-top: solid 10px var( --bg-dark);
 }

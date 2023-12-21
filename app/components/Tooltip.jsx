@@ -3,7 +3,7 @@ import StyleTooltip from './Tooltip.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareFacebook, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback, useEffect, useRef } from "react"
 
 const useBreakPoint = (width) => {
     const [isMobile, setIsMobile] = useState(false)
@@ -31,10 +31,26 @@ const useBreakPoint = (width) => {
 const Tooltip = ( { text, icons, trigger, children } ) =>{
     const [isVisible, setIsVisible] = useState(false)
     const breakPoint = useBreakPoint(640)
+    const buttonRef = useRef(null)
+    const tooltipRef = useRef(null)
 
     const toggleShowTooltip = () => {
         setIsVisible(!isVisible)
     }
+    
+    useEffect(() => {
+        const button = buttonRef.current
+        const tooltip = tooltipRef.current
+
+        if (button && tooltip){
+            const buttonRect = button.getBoundingClientRect()
+            const tooltipRect = tooltip.getBoundingClientRect()
+
+            tooltip.style.top = `${buttonRect.top - tooltipRect.height - 10}px`
+            tooltip.style.left = `${buttonRect.left + (buttonRect.width - tooltipRect.width)/2}px`
+        }
+
+    },[isVisible])
 
     return (
         <div>
@@ -61,21 +77,23 @@ const Tooltip = ( { text, icons, trigger, children } ) =>{
                 </>
                 ) : (
                 <>
-                    <button className="flex rounded-full w-8 h-8 p-2 bg-slate-100 text-[var(--dark-blue)] hover:bg-slate-500 hover:text-white">{children}</button>
-                    <div className={`${StyleTooltip.tooltip__container} ${StyleTooltip.tooltip__containerDesktop} flex items-center rounded-lg py-5 px-8`}>
-                    <span className='uppercase mr-5'>{text}</span>
-                        <div className='flex gap-4'>
-                            <a href='https://www.facebook.com/' target='_blank'>
-                                <FontAwesomeIcon icon={faSquareFacebook} className='text-white' size='xl'/>
-                            </a>
-                            <a href='https://twitter.com/?lang=es' target='_blank'>
-                                <FontAwesomeIcon icon={faTwitter} className='text-white' size='xl'/>
-                            </a>
-                            <a href='https://co.pinterest.com/' target='_blank'>
-                                <FontAwesomeIcon icon={faPinterest} className='text-white' size='xl'/>
-                            </a>
+                    <button className="flex rounded-full w-8 h-8 p-2 bg-slate-100 text-[var(--dark-blue)] hover:bg-slate-500 hover:text-white" ref={buttonRef} onClick={toggleShowTooltip}>{children}</button>
+                    {isVisible && (
+                        <div className={`${StyleTooltip.tooltip__container} ${StyleTooltip.tooltip__containerDesktop} flex items-center rounded-lg py-5 px-8`} ref={tooltipRef}>
+                            <span className='uppercase mr-5'>{text}</span>
+                            <div className='flex gap-4'>
+                                <a href='https://www.facebook.com/' target='_blank'>
+                                    <FontAwesomeIcon icon={faSquareFacebook} className='text-white' size='xl'/>
+                                </a>
+                                <a href='https://twitter.com/?lang=es' target='_blank'>
+                                    <FontAwesomeIcon icon={faTwitter} className='text-white' size='xl'/>
+                                </a>
+                                <a href='https://co.pinterest.com/' target='_blank'>
+                                    <FontAwesomeIcon icon={faPinterest} className='text-white' size='xl'/>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </>
             )}
         </div>
