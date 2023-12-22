@@ -39,18 +39,21 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL Frontenmentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db/hub/sass-css-flexbox-parcel-mobile-first-async-functions-HyUda_185)
-- Live Site URL: [Advice generator app by Esteban Diaz](https://admirable-marzipan-9e2f01.netlify.app/)
+- Live Site URL: [Article component app by Esteban Diaz](https://article-challenge-with-nextjs.vercel.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
+- CSS custom properties and CSS modules
+- Flexbox and CSS Grid
+- Tailwind utilities
+-
 - [Async/await Functions](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/async_function)
-- [Parcel](https://parceljs.org/) - Build tool
-- [Sass](https://sass-lang.com/) - CSS extension language
+- [React JS](https://es.react.dev/) - Library frontend
+- [NextJS 13](https://nextjs.org/) - The React Framework, components side server render, app router
+- [Json server](https://www.npmjs.com/package/json-server) - fake REST API 
 
 ### What I learned
 
@@ -65,7 +68,18 @@ To see how you can return data from API and print on screen:
         drawAdvice(data.slip.id, data.slip.advice);
     }
 ```
+I learned how you can use Hooks React like: UseEffect, UseState and UseRef. Create custom Hooks too.
 
+```js
+    const [isVisible, setIsVisible] = useState(false)
+    const breakPoint = useBreakPoint(640)
+    const buttonRef = useRef(null)
+    const tooltipRef = useRef(null)
+
+    const toggleShowTooltip = () => {
+        setIsVisible(!isVisible)
+    }
+```
 ### Continued development
 
 I want to continue focusing in a proyect react JS. going forward building a proyect from react. 
