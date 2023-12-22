@@ -11,7 +11,7 @@ import Tooltip from "./components/Tooltip";
 import Date from "./components/Date"
 
 async function getData(){
-  const response = await fetch("http://localhost:8000/articles/1")
+  const response = await fetch("https://rest-api-with-json-server.onrender.com/articles/1")
 
   return response.json()
 } 
